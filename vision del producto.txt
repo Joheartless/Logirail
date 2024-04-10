@@ -1,0 +1,9 @@
+vision del producto:
+
+	maquina vendedora de billetes de tren. El usuario interactúa con la máquina para comprar billetes de tren, escogiendo la ruta destino. Tendrá que pagar con tarjeta para poder obtener el billete.
+
+
+vision del producto:
+
+	La máquina de vendedora de billetes de tren te permite consultar las rutas, paradas y horarios antes de comprar el billete.
+	La máquina vendedora de billetes de tren de renfe es una manera de agilizar el proceso para poder hacer tus viajes en tren. Puedes ver la ruta de los distintos destinos disponibles, 
