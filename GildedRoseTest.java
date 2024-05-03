@@ -1,6 +1,8 @@
 package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -134,6 +136,34 @@ private static final String STANDARD = "Standard product";
         		);    
     }
  
+    @ParameterizedTest (name = "{4} Sellin: {0} Quality: {1} -> Sellin: {2} Quality: {3}")
+    @CsvSource(value = { 
+    		"-2,3,-3,1,name1",
+    		"-1,1,-2,0,name1",
+    		//"7,50,6,50,Aged Brie",	
+    		})
+    @DisplayName("Caso de prueba Productos Normales")
+    void ProductosNormales(int sellIn,int quality,  int sellInResult,int qualityResult, String name) 
+    {
+		Item[] items = new Item[] { new Item(name, sellIn, quality) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+     
+        assertNotNull(items);
+       
+		assertAll("Propiedades",
+        		
+        		() -> assertEquals(name, app.items[0].name, "name"),
+        		() -> assertEquals(sellInResult, app.items[0].sellIn,"Sellin"),
+        		() -> assertEquals(qualityResult, app.items[0].quality, "Quality")
+        		);    
+    }
+ 
+    
+    
+    
+    
+    
     @Test
     @DisplayName("Queso Brie, dias disponibles y max 50")
     void CPBrie() {
@@ -150,6 +180,29 @@ private static final String STANDARD = "Standard product";
         		);    
     }
     
+    
+    @ParameterizedTest (name = "{4} Sellin: {0} Quality: {1} -> Sellin: {2} Quality: {3}")
+    @CsvSource(value = {
+    		"7,50,6,50,Aged Brie",
+    		"1,23,0,24,Aged Brie",
+    		})
+    @DisplayName("Caso de Prueba Queso Brie")
+    void CPQB(int sellIn,int quality,  int sellInResult,int qualityResult, String name) 
+    {
+		Item[] items = new Item[] { new Item(name, sellIn, quality) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+     
+        assertNotNull(items);
+       
+		assertAll("Propiedades",
+        		
+        		() -> assertEquals(name, app.items[0].name, "name"),
+        		() -> assertEquals(sellInResult, app.items[0].sellIn,"Sellin"),
+        		() -> assertEquals(qualityResult, app.items[0].quality, "Quality")
+        		);    
+    }
+ 
     
     
     
