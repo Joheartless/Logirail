@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="Pruebas API E2E" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="Calculadora">C:/Users/L42328274V/Documents/testing/Calculadora-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="Web4Testing.wadl">C:/Users/L42328274V/Documents/testing/Web4Testing.wadl</con:project>
+</con:soapui-workspace>
